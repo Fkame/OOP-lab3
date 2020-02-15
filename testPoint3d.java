@@ -89,9 +89,9 @@ public class testPoint3d {
 		if (distance == trueDistance) System.out.println ("Point3d.distanceTo() success");
 		else System.out.println ("Point3d.distanceTo() failed");
 		
-		
 	}
 	
+	// Для быстрого сравнения точек разных объектов класса Point3d
 	private static void checkingPoint3d(double x, double y, double z, double x1, double y1, double z1, String testMethod) {
 		if (x != x1 || y != y1 || z != z1) {
 			System.out.println(testMethod + " failed");

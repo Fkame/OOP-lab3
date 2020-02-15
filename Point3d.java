@@ -74,6 +74,7 @@ public class Point3d {
 		double diffZpow2 = Math.pow(z - this.z, 2);
 		double distance = Math.pow(diffXpow2 + diffYpow2 + diffZpow2, 0.5);
 		return Point3d.roundTo2Symbols(distance);
+		//return distance;
 	}
 	
 	// Округление значения типа double до 2-х знаков после запятой

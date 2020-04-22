@@ -1,8 +1,6 @@
-public class Point3d {
+public class Point3d extends Point2d {
 	
-	private double x;
-	private double y;
-	private double z;
+	protected double z;
 	
 	// Конструктор по умолчанию
 	public Point3d () {
@@ -11,41 +9,19 @@ public class Point3d {
 	
 	// Конструктор инициализации точек типа double
 	public Point3d (double x, double y, double z) {
-		this.x = x;
-		this.y = y;
+		super(x,y);
 		this.z = z;
 	}
 	
 	// Конструктор инициализации точек типа int
 	public Point3d (int x, int y, int z) {
-		this.x = x;
-		this.y = y;
+		super(x,y);
 		this.z = z;
-	}
-	
-	// Получение координаты x
-	public double getX() {
-		return this.x;
-	}
-	
-	// Получение координаты y
-	public double getY() {
-		return this.y;
 	}
 	
 	// Получение координаты z
 	public double getZ() {
 		return this.z;
-	}
-	
-	// Установка координаты x
-	public void setX(double x) {
-		this.x = x;
-	}
-	
-	// Установка координаты y
-	public void setY(double y) {
-		this.y = y;
 	}
 	
 	// Установка координаты z
@@ -54,7 +30,14 @@ public class Point3d {
 	}
 	
 	// Сравнение разных объектов класса Point3d на равенство координат
-	public boolean equals(Point3d p) {
+	public boolean equals(Object obj) {
+		Point3d p;
+		if (obj instanceof Point3d) {
+			p = (Point3d) obj;
+		}
+		else {
+			return false;
+		}
 		double x, y, z;
 		x = p.getX();
 		y = p.getY();

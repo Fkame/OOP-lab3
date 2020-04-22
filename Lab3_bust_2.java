@@ -1,44 +1,35 @@
 import java.util.Scanner;
 
-public final class Lab3_bust {
+public final class Lab3_bust_2 {
 	
 	public static void main (String[] args) {
-		System.out.println("Lab 3 program. Working with points in area.");
+		System.out.println("Lab 3 program. Working with points in 2d.");
 		
 		// Ввод данных пользователем
 		Scanner in = new Scanner(System.in);
 		double x, y, z;
-		Point3d p1, p2, p3;
-		//p1 = new Point3d(1, 1, 0);
-		//p2 = new Point3d(-2, 4, 0);
-		//p3 = new Point3d(-2, -2, 0);
+		Point2d p1, p2, p3;
 		
-		// Point3d p1
+		// Point2d p1
 		System.out.print("\nВведите координату x точки 1: ");
 		x = in.nextDouble();
 		System.out.print("Введите координату y точки 1: ");
 		y = in.nextDouble();
-		System.out.print("Введите координату z точки 1: ");
-		z = in.nextDouble();
-		p1 = new Point3d(x, y, z);
+		p1 = new Point2d(x, y);
 		
-		// Point3d p2
+		// Point2d p2
 		System.out.print("\nВведите координату x точки 2: ");
 		x = in.nextDouble();
 		System.out.print("Введите координату y точки 2: ");
 		y = in.nextDouble();
-		System.out.print("Введите координату z точки 2: ");
-		z = in.nextDouble();
-		p2 = new Point3d(x, y, z);
+		p2 = new Point2d(x, y);
 		
-		// Point3d p3
+		// Point2d p3
 		System.out.print("\nВведите координату x точки 3: ");
 		x = in.nextDouble();
 		System.out.print("Введите координату y точки 3: ");
 		y = in.nextDouble();
-		System.out.print("Введите координату z точки 3: ");
-		z = in.nextDouble();
-		p3 = new Point3d(x, y, z);
+		p3 = new Point2d(x, y);
 		
 		System.out.println("\nТочки созданы!\n");
 		in.close();
@@ -50,13 +41,13 @@ public final class Lab3_bust {
 		else {
 			//Рассчёт площади треугольника
 			double s = computeArea(p1, p2, p3);
-			System.out.println("Площадь получившегося треугольника = " + fittingAnswer(s));
+			System.out.println("Площадь получившегося треугольника на плоскости = " + fittingAnswer(s));
 		}
 		
 	}
 	
 	//Рассчёт площади треугольника по 3-м точкам
-	public static double computeArea(Point3d p1, Point3d p2, Point3d p3) {
+	public static double computeArea(Point2d p1, Point2d p2, Point2d p3) {
 		// Площадь
 		double s;
 		// Полупериметр
@@ -64,15 +55,15 @@ public final class Lab3_bust {
 		double a, b, c;
 		
 		a = Math.abs(p1.distanceTo(p2));
-		//System.out.println("\ta = " + a);
+		System.out.println("\ta = " + a);
 		b = Math.abs(p2.distanceTo(p3));
-		//System.out.println("\tb = " + b);
+		System.out.println("\tb = " + b);
 		c = Math.abs(p1.distanceTo(p3));
-		//System.out.println("\tc = " + c);
+		System.out.println("\tc = " + c);
 		p = (a + b + c) / 2;
-		//System.out.println("\tp = " + p);
+		System.out.println("\tp = " + p);
 		s = Math.pow((p*(p - a)*(p - b)*(p - c)), 0.5);
-		//System.out.println("\ts = " + s);
+		System.out.println("\ts = " + s);
 		
 		return s;
 	}
